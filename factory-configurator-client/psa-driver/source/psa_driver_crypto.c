@@ -89,7 +89,7 @@ static void set_generic_attr(uint32_t extra_flags, psa_key_attributes_t *psa_key
     psa_set_key_usage_flags(psa_key_attr, psa_key_usage);
     // set key algorithm
     psa_set_key_algorithm(psa_key_attr, PSA_ALG_ECDSA(PSA_ALG_SHA_256));
-#if !defined(TARGET_LPC55S69_NS)
+#if !defined(TARGET_LPC55S69_NS) && !defined(TARGET_CYTFM_064B0S2_4343W)
     psa_set_key_enrollment_algorithm(psa_key_attr, PSA_ALG_ECDH);
 #endif
 }
